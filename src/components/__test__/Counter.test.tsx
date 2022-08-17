@@ -31,4 +31,12 @@ describe("<Counter/>", () => {
     button.click();
     expect(CounterProps.onIncrease).toHaveBeenCalled();
   });
+
+  test("감소 버튼을 클릭했을 떄 onDecrease 함수가 실행되는지 테스트", () => {
+    render(<Counter {...CounterProps} />);
+
+    const button = screen.getByRole("button", { name: "감소" });
+    button.click();
+    expect(CounterProps.onDecrease).toHaveBeenCalled();
+  });
 });
