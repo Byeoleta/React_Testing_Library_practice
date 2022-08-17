@@ -22,4 +22,13 @@ describe("<Counter/>", () => {
     // expect(text).toBeInTheDocument();
     // // 정확한 Counter를 찾는게 아니라 "Count"를 포함하고 있는 텍스트 찾고 싶을 땐 이런 정규식 사용
   });
+
+  test("증가 버튼 클릭 시 onIncrease 함수 실행되는지 확인하는 테스트", () => {
+    render(<Counter {...CounterProps} />);
+
+    const button = screen.getByRole("button", { name: "증가" });
+    // getByRole 메서드 사용해서 "button" 태그의 name이 "증가"인 Eliment 불러옴
+    button.click();
+    expect(CounterProps.onIncrease).toHaveBeenCalled();
+  });
 });
