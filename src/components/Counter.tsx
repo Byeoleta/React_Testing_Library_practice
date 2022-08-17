@@ -1,4 +1,4 @@
-import React, { ReactEliment } from "react";
+import React, { ReactElement } from "react";
 
 interface CounterProps {
   count: number;
@@ -10,7 +10,7 @@ function Counter({
   count,
   onIncrease,
   onDecrease,
-}: CounterProps): ReactEliment {
+}: CounterProps): ReactElement {
   return (
     <div>
       <h1>Counter</h1>
